@@ -2,14 +2,15 @@
   "name": "AluraNode",
   "version": "1.0.0",
   "description": "API com express, da formação da Alura",
-  "main": "./src/index.js",
+  "main": "index.js",
   "author": "Cleberson <clebersonjosea@gmail.com>",
   "license": "MIT",
   "type": "module",
   "scripts": {
-    "start": "nodemon ./src/index.js"
+    "start": "nodemon ./index.js"
   },
   "dependencies": {
+    "cors": "^2.8.5",
     "express": "^4.17.1",
     "moment": "^2.29.1",
     "mysql": "^2.18.1"

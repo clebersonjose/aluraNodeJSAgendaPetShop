@@ -2,7 +2,7 @@
 // // TODO: Banco de dados;
 // // TODO: Post atendimento;
 // // TODO: Detalhamento de atendimento;
-// TODO: Delete atendimento;
+// // TODO: Delete atendimento;
 // TODO: Put atendimento;
 // TODO: Get atendimentos;
 

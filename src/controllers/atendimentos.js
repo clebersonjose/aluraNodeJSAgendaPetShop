@@ -10,6 +10,11 @@ class Atendimentos {
     const id = parseInt(req.params.id)
     atendimento.view(id, res);
   }
+
+  delete(req, res) {
+    const id = parseInt(req.params.id)
+    atendimento.delete(id, res);
+  }
 }
 
 export default new Atendimentos();

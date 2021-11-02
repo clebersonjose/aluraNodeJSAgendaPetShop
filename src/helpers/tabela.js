@@ -15,25 +15,24 @@ const sql = `
   );
 `;
 
-const tabela = () => {
-  conexao.connect(erro => {
+const tabela = () => conexao.connect(erro => {
+  if (erro) {
+    console.log(erro);
+    return;
+  }
+
+  console.log('conectado com sucesso');
+
+  conexao.query(sql, erro => {
     if (erro) {
       console.log(erro);
-      return false;
+      return;
     }
 
-    console.log('conectado com sucesso');
+    console.log('Tabela Atendimentos criada com sucesso');
+  })
 
-    conexao.query(sql, erro => {
-      if (erro) {
-        console.log(erro);
-        return false;
-      }
+});
 
-      console.log('Tabela Atendimentos criada com sucesso');
-      return true
-    })
-  });
-}
 
 export default tabela;

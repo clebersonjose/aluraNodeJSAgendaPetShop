@@ -15,6 +15,12 @@ class Atendimentos {
     const id = parseInt(req.params.id)
     atendimento.delete(id, res);
   }
+
+  edit(req, res) {
+    const id = parseInt(req.params.id)
+    const data = req.body
+    atendimento.edit(id, data, res)
+  }
 }
 
 export default new Atendimentos();

@@ -41,6 +41,20 @@ class Atendimento {
       res.status(201).json({ ...atendimento, ...resultados });
     })
   }
+
+  view(id, res) {
+    const sql = `SELECT * FROM Atendimentos WHERE id=${id}`
+
+    conexao.query(sql, (erro, resultados) => {
+      const atendimento = resultados[0]
+      if (erro) {
+        res.status(400).json(erro);
+        return;
+      }
+
+      res.status(200).json(atendimento);
+    })
+  }
 }
 
 export default new Atendimento();

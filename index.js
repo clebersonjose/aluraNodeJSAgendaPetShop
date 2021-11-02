@@ -10,26 +10,9 @@ import express from 'express';
 import cors from 'cors';
 
 import routes from './src/routes.js';
-import conexao from './src/config/conexao.js';
 import tabela from './src/config/tabela.js';
 
-conexao.connect(erro => {
-  if (erro) {
-    console.log(erro);
-    return;
-  }
-
-  console.log(erro);
-  console.log('conectado com sucesso');
-
-  conexao.query(tabela, erro => {
-    if (erro) {
-      console.log(erro);
-      return;
-    }
-
-    console.log('Tabela Atendimentos criada com sucesso');
-  })
+if (tabela) {
 
   const app = express();
 
@@ -37,5 +20,4 @@ conexao.connect(erro => {
   app.use(express.json());
   app.use(routes);
   app.listen(3333, () => console.log("ta on"));
-});
-
+}

@@ -17,19 +17,19 @@ const sql = `
 
 const tabela = () => conexao.connect(erro => {
   if (erro) {
-    console.log(erro);
+    process.stdout.write(`${erro} \n`);
     return;
   }
 
-  console.log('conectado com sucesso');
+  process.stdout.write('conectado com sucesso \n');
 
   conexao.query(sql, erro => {
     if (erro) {
-      console.log(erro);
+      process.stdout.write(`${erro} \n`);
       return;
     }
 
-    console.log('Tabela Atendimentos criada com sucesso');
+    process.stdout.write('Tabela Atendimentos criada com sucesso \n');
   })
 
 });

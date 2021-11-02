@@ -1,9 +1,10 @@
 import atendimento from '../models/atendimento.js'
+import repositorioDeAtendimentos from '../models/repositorioDeAtendimentos.js'
 
 class Atendimentos {
   add(req, res) {
     const atendimentoData = req.body;
-    atendimento.add(atendimentoData, res);
+    repositorioDeAtendimentos.add(atendimentoData, res);
   }
 
   view(req, res) {
@@ -13,13 +14,17 @@ class Atendimentos {
 
   delete(req, res) {
     const id = parseInt(req.params.id)
-    atendimento.delete(id, res);
+    repositorioDeAtendimentos.delete(id, res);
   }
 
   edit(req, res) {
     const id = parseInt(req.params.id)
     const data = req.body
     atendimento.edit(id, data, res)
+  }
+
+  get(req, res) {
+    repositorioDeAtendimentos.get(res);
   }
 }
 
